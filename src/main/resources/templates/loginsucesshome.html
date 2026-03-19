@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HomePage</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            background-color: rgb(236, 236, 236);
+        }
+
+        header {
+            text-align: center;
+            background-color: rgb(166, 179, 179);
+            padding: 10px;
+            margin-top: 0px;
+            margin-bottom: 70px;
+
+        }
+
+        .potos {
+            padding: 10px;
+            background-color: rgb(244, 242, 239);
+            margin-bottom: 50px;
+        }
+
+        img {
+            margin: 20px;
+        }
+
+        .main
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h2> [ development , testing, devops ]</h2>
+        <div>
+            <p 
+            
+            style="background-color: rgb(220, 250, 212);
+            color: rgb(53, 53, 128);
+            padding: 3px;;
+            "
+            
+            > Sucessfully Signed</p>
+        </div>
+
+    </header>
+
+    <div class="main">
+        <div class="potos" style="display:flex">
+            <!--  h1>Potos :</h1-->
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1mIWTwcjegkzg9HnL_jMeEJgAM2x2bucd8g&s" />
+            <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXLdXdD08lwjYreMEiKpPJ5MRjmJOc850ws2ir3lhMX1OHbV6jAeaLxoc&s" />
+        </div>
+        <div class="courses_names" style="margin-bottom:40px;">
+            <h2 style="text-align:center;">Avaliable courses : [ ]</h2>
+            <table style="margin:auto;">
+                <tr>
+                    <th>1.javafullstack : </th>
+                    <td>java &nbsp;&nbsp;- </td>
+                    <td>hibernate &nbsp;&nbsp;- </td>
+                    <td>spring &nbsp;&nbsp;- </td>
+                    <td>postgresql &nbsp;&nbsp;</td>
+
+                </tr>
+                <tr>
+                    <th>&nbsp;2.Python_stack : </th>
+                    <td>Python &nbsp;&nbsp;- </td>
+                    <td>flask &nbsp;&nbsp;- </td>
+                    <td>django&nbsp;&nbsp;- </td>
+                    <td>postgresql &nbsp;&nbsp; </td>
+
+
+                </tr>
+                <tr>
+                    <th>3.Mernfullstack : </th>
+                    <td>js &nbsp;&nbsp;- </td>
+                    <td>node &nbsp;&nbsp;- </td>
+                    <td>react&nbsp;&nbsp;- </td>
+                    <td>mongoDb &nbsp;&nbsp; </td>
+
+
+                </tr>
+                <tr>
+                    <th>4.netfullstack : </th>
+                    <td>c# &nbsp;&nbsp;- </td>
+                    <td>.net &nbsp;&nbsp;- </td>
+                    <td>html,css js &nbsp;&nbsp;- </td>
+                    <td>sql server &nbsp;&nbsp; </td>
+
+
+
+                </tr>
+            </table>
+        </div>
+
+        <div class="RegisterData"
+            style="
+            color:white;background-color: rgb(75, 117, 117);padding: 50px;margin-bottom: 10px;margin-top: 10px;">
+            <a th:href="@{/ins/add}" class="btn" style="border:2px solid black">- - >Quick Registration </a>
+            <br><br><a th:href="@{/ins}" class="btn" style="border:2px solid black"> -- > RegisteredStudentsData And
+                TeachersData</a>
+        </div>
+
+
+    </div>
+    <div class="btm" style="background-color:rgb(134, 123, 109);margin-bottom:0px;
+        padding:20px;color:white;
+        margin-top: 100px;">
+        <p>Learn - Focus - Practice - Build - Archieve - - ></p>
+        <p>Dev Instutions -Knowledge here's </p>
+<a th:href="@{/ins/home}">home</a>
+        </div>
+    </div>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js">
+    </script>
+</body>
+
+</html>

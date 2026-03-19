@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HomePage</title>
+
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+	rel="stylesheet">
+
+<style>
+</style>
+</head>
+
+<body>
+
+
+	
+	<form th:action="@{/ins/useradd}" method="post"
+		>	<h3>User SignUp Page - - ></h3>
+		<br> <br>
+		
+				<label for="firstname">Firstname :&nbsp;&nbsp; </label>
+				<input type="text" name="firstname">
+
+			
+			<br>
+			<br>
+
+		
+				<label for="lastname">Lastname :&nbsp;&nbsp; </label>
+				<input type="text" name="lastname">
+
+		
+			<br>
+			<br>
+
+			
+				<label for="email">Gmail :&nbsp;&nbsp; </label>
+				<input type="email" name="email">
+
+			
+			<br>
+			<br>
+
+			
+				<label for="password">Set Password :&nbsp;&nbsp; </label>
+				<input type="password" name="password">
+
+			
+			<br>
+			<br>
+
+			
+
+				<input type="submit" value="Register">
+
+			
+			<br>
+		
+	</form>
+
+
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+
+    <!-- Bootstrap 5 CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        .ap {
+            max-width: 500px;
+            margin: 40px auto;
+            padding: 25px;
+            background: #C5BBF2;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        .form-control {
+            margin-bottom: 15px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body class="bg-light">
+
+<h2>Add Student</h2>
+
+<div class="ap">
+    <!-- POST mapping must exist in controller -->
+    <form th:action="@{/students/add}" method="post">
+
+        <input type="text" name="name" class="form-control" placeholder="Enter Name" required>
+
+        <input type="text" name="course" class="form-control" placeholder="Enter Course" required>
+
+        <input type="email" name="email" class="form-control" placeholder="Enter Email" required>
+
+        <button type="submit" class="btn btn-primary w-100 mt-2">Save</button>
+    </form>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

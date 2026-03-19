@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+	rel="stylesheet">
+<title>RegisterdData</title>
+<style>
+body {
+	background-color: rgb(169, 236, 169);
+}
+
+h3 {
+	text-align: center;
+}
+</style>
+</head>
+
+<body>
+	<div class="Faculty"
+		style="text-align: centre; color: rgb(71, 53, 30); background-color: rgb(247, 230, 211); padding: 30px;">
+		<h3>Faculty Profiles - - :</h3>
+
+		<table
+			class="table table-bordered table-striped table-hover table-custom">
+			<tr>
+				<th>Name</th>
+				<th>Subject</th>
+				<th>Experience</th>
+				<th>Timings</th>
+
+			</tr>
+
+			<tr>
+				<td>Ravi</td>
+				<td>java</td>
+				<td>8</td>
+				<td>10-AM : 12-PM</td>
+
+			</tr>
+
+			<tr>
+				<td>GothamSir</td>
+				<td>spring</td>
+				<td>6</td>
+				<td>2-PM : 4-PM</td>
+
+			</tr>
+
+			<tr>
+				<td>Bhadra</td>
+				<td>Core java</td>
+				<td>9</td>
+				<td>10-AM : 12-PM</td>
+
+			</tr>
+			<tr>
+				<td>Tarun</td>
+				<td>Web Technologies</td>
+				<td>4</td>
+				<td>4-PM : 6-PM</td>
+
+			</tr>
+
+		</table>
+	</div>
+	<br>
+	<br>
+
+	<div class="registeredDataap"
+		style="background-color: rgb(213, 236, 233); color: rgb(44, 46, 46); padding: 30px;">
+		<h3>RegisteredStudents Data -- :</h3>
+
+		<table
+			class="table table-bordered table-striped table-hover table-custom">
+			<thead>
+				<tr>
+					<th>id</th>
+					<th>name</th>
+					<th>qualification</th>
+					<th>course</th>
+					<th>email</th>
+					<th>Actions</th>
+
+
+				</tr>
+
+			</thead>
+			<tbody th:if="${studentrecords != null}">
+				<tr th:each="s : ${studentrecords }">
+					<td th:text="${s.id}"></td>
+					<td th:text="${s.name}"></td>
+					<td th:text="${s.qualification}">Qualification</td>
+					<td th:text="${s.course}">Course</td>
+					<td th:text="${s.email}">Email</td>
+					<td>
+					<a th:href="@{/ins/openstudentrecordedit/{id}(id=${s.id})}">edit</a>
+					<a th:href="@{/ins/deletestudentrecord/{id}(id=${s.id})}">Delete</a>
+					
+					</td>
+				</tr>
+			</tbody>
+
+
+		</table>
+
+	</div>
+
+	<div style="margin-top: 100px;background-color:lightgray;padding:20px">
+		<p>Ins -Instutions -- ></p>
+	</div>
+
+
+
+</body>
+
+
+</html>
+
+
+<!-- 
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>  <meta charset="UTF-8">
+<link 
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" 
+        rel="stylesheet">
+<title>RegisterdData</title>
+<style>
+body{
+background-color:rgb(169, 236, 169);
+
+}
+h3{
+text-align:center;
+}
+</style>
+</head>
+
+<body>
+	<div class="Faculty"  style="text-align:centre;color:rgb(71, 53, 30);
+    background-color: rgb(247, 230, 211);
+    padding:30px;
+    ">
+		<h3>Faculty Profiles - - :</h3>
+
+		<table border="1" style="border-collapse: collapse;margin:auto">
+			<tr >
+				<th>Name</th>
+				<th>Subject</th>
+				<th>Experience</th>
+				<th>Timings</th>
+
+			</tr>
+
+			<tr>
+				<td>Ravi</td>
+				<td>java</td>
+				<td>8</td>
+				<td>10-AM : 12-PM</td>
+
+			</tr>
+
+			<tr>
+				<td>GirishSir</td>
+				<td>spring</td>
+				<td>6</td>
+				<td>2-PM : 4-PM</td>
+
+			</tr>
+
+			<tr>
+				<td>Bhadra</td>
+				<td>Core java</td>
+				<td>9</td>
+				<td>10-AM : 12-PM</td>
+
+			</tr>
+			<tr>
+				<td>Tarun</td>
+				<td>Web Technolohies</td>
+				<td>4</td>
+				<td>4-PM : 6-PM</td>
+
+			</tr>
+
+		</table>
+	</div>
+	<br><br>
+	
+	<div class="registeredDataap"
+    style="background-color: rgb(213, 236, 233);
+    color: rgb(44, 46, 46);padding: 30px;
+    "
+    ><h3>RegisteredStudents Data -- :</h3>
+
+		<table border="1" style="border-collapse: collapse;padding:30px;margin:auto
+        
+        ">
+			<thead>
+				<tr>
+					<th>id</th>
+					<th>name</th>
+					<th>qualification</th>
+					<th>course</th>
+					<th>email</th>
+
+
+				</tr>
+
+			</thead>
+			<tbody th:if="${ins != null}">
+        <tr th:each="s : ${ins}">
+            <td th:text="${s.id}">1</td>
+            <td th:text="${s.name}">Name</td>
+            <td th:text="${s.qualification}">Qualification</td>
+            <td th:text="${s.course}">Course</td>
+            <td th:text="${s.email}">Email</td>
+        </tr>
+    </tbody>
+			
+			
+		</table>
+
+	</div>
+
+
+
+
+</body>
+
+
+</html>
+
+ -->
