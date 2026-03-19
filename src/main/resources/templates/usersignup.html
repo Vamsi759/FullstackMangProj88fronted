@@ -4,66 +4,126 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>HomePage</title>
+<title>User Signup</title>
 
-<link
-	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-	rel="stylesheet">
+<!-- Bootstrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
+    body {
+        font-family: 'Poppins', sans-serif;
+        background: linear-gradient(135deg, #ff758c, #ff7eb3);
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* CARD */
+    .signup-box {
+        width: 100%;
+        max-width: 420px;
+        padding: 30px;
+        border-radius: 15px;
+
+        background: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(12px);
+
+        box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+        color: white;
+    }
+
+    h3 {
+        text-align: center;
+        margin-bottom: 20px;
+        font-weight: 600;
+    }
+
+    /* LABEL */
+    .form-label {
+        font-size: 14px;
+        margin-bottom: 5px;
+    }
+
+    /* INPUT */
+    .form-control {
+        border-radius: 8px;
+        border: none;
+        padding: 12px;
+        margin-bottom: 15px;
+        transition: 0.3s;
+    }
+
+    .form-control:focus {
+        box-shadow: 0 0 8px rgba(255,255,255,0.7);
+        transform: scale(1.02);
+    }
+
+    /* BUTTON */
+    .btn-custom {
+        background: white;
+        color: #ff4d6d;
+        font-weight: 600;
+        border-radius: 8px;
+        padding: 10px;
+        transition: 0.3s;
+    }
+
+    .btn-custom:hover {
+        background: #f1f1f1;
+        transform: scale(1.05);
+    }
+
+    /* LINK */
+    .extra-link {
+        display: block;
+        text-align: center;
+        margin-top: 10px;
+        color: white;
+        text-decoration: none;
+        font-size: 14px;
+    }
+
+    .extra-link:hover {
+        text-decoration: underline;
+    }
 </style>
 </head>
 
 <body>
 
+<div class="signup-box">
 
-	
-	<form th:action="@{/ins/useradd}" method="post"
-		>	<h3>User SignUp Page - - ></h3>
-		<br> <br>
-		
-				<label for="firstname">Firstname :&nbsp;&nbsp; </label>
-				<input type="text" name="firstname">
+    <h3>📝 User Signup</h3>
 
-			
-			<br>
-			<br>
+    <form th:action="@{/ins/useradd}" method="post">
 
-		
-				<label for="lastname">Lastname :&nbsp;&nbsp; </label>
-				<input type="text" name="lastname">
+        <label class="form-label">First Name</label>
+        <input type="text" name="firstname" class="form-control" required>
 
-		
-			<br>
-			<br>
+        <label class="form-label">Last Name</label>
+        <input type="text" name="lastname" class="form-control" required>
 
-			
-				<label for="email">Gmail :&nbsp;&nbsp; </label>
-				<input type="email" name="email">
+        <label class="form-label">Email</label>
+        <input type="email" name="email" class="form-control" required>
 
-			
-			<br>
-			<br>
+        <label class="form-label">Password</label>
+        <input type="password" name="password" class="form-control" required>
 
-			
-				<label for="password">Set Password :&nbsp;&nbsp; </label>
-				<input type="password" name="password">
+        <button type="submit" class="btn btn-custom w-100 mt-2">
+            Register
+        </button>
 
-			
-			<br>
-			<br>
+    </form>
 
-			
+    <a th:href="@{/ins/openuserlogin}" class="extra-link">
+        Already have an account? Login
+    </a>
 
-				<input type="submit" value="Register">
+</div>
 
-			
-			<br>
-		
-	</form>
-
-
-	<script
-		src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
