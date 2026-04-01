@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Admin Home</title>
 
     <!-- Bootstrap -->
@@ -15,7 +15,7 @@
     <style>
         body {
             font-family: 'Poppins', sans-serif;
-            background: linear-gradient(135deg, #dfe9f3, #ffffff);
+            background: linear-gradient(135deg, #eef2f3, #ffffff);
         }
 
         /* HEADER */
@@ -23,7 +23,7 @@
             text-align: center;
             background: linear-gradient(135deg, #11998e, #38ef7d);
             color: white;
-            padding: 25px;
+            padding: 20px;
             border-radius: 0 0 20px 20px;
             box-shadow: 0 4px 10px rgba(0,0,0,0.2);
         }
@@ -31,33 +31,29 @@
         .success-msg {
             background: #e6fff2;
             color: #006644;
-            padding: 8px 15px;
-            border-radius: 8px;
+            padding: 6px 12px;
+            border-radius: 6px;
             display: inline-block;
-            margin-top: 10px;
-            font-weight: 500;
+            margin-top: 8px;
+            font-size: 14px;
         }
 
-        /* MAIN */
-        .main {
-            padding: 30px;
+        /* CARDS */
+        .card-custom {
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: 0.3s;
+        }
+
+        .card-custom:hover {
+            transform: translateY(-5px);
         }
 
         /* IMAGES */
-        .photos {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            background: white;
-            padding: 20px;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            margin-bottom: 40px;
-        }
-
         .photos img {
-            width: 260px;
-            height: 150px;
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
             border-radius: 10px;
             transition: 0.3s;
         }
@@ -66,36 +62,13 @@
             transform: scale(1.05);
         }
 
-        /* COURSES */
-        .courses {
-            background: white;
-            padding: 25px;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            margin-bottom: 40px;
-        }
-
-        table {
-            width: 100%;
-            text-align: center;
-        }
-
-        th {
-            color: #11998e;
-        }
-
-        td {
-            padding: 10px;
-        }
-
-        /* ACTION BOX */
+        /* ACTIONS */
         .actions {
-            text-align: center;
             background: linear-gradient(135deg, #4b6cb7, #182848);
-            padding: 40px;
-            border-radius: 15px;
             color: white;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
         }
 
         .btn-custom {
@@ -108,7 +81,6 @@
         .btn-custom:hover {
             background: white;
             color: #182848;
-            transform: scale(1.05);
         }
 
         /* FOOTER */
@@ -116,14 +88,24 @@
             text-align: center;
             background: #333;
             color: white;
-            padding: 20px;
-            margin-top: 50px;
+            padding: 15px;
+            margin-top: 40px;
         }
 
         .footer a {
             color: #38ef7d;
             text-decoration: none;
-            font-weight: 500;
+        }
+
+        /* MOBILE FIX */
+        @media (max-width: 576px) {
+            header h2 {
+                font-size: 18px;
+            }
+
+            .actions h4 {
+                font-size: 18px;
+            }
         }
     </style>
 </head>
@@ -132,64 +114,93 @@
 
 <header>
     <h2>Development | Testing | DevOps</h2>
-    <div class="success-msg">
-        ✅ Successfully Signed in as Admin
-    </div>
+    <div class="success-msg">✅ Successfully Signed in as Admin</div>
 </header>
 
-<div class="main">
+<div class="container mt-4">
 
-    <!-- Images -->
-    <div class="photos">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1mIWTwcjegkzg9HnL_jMeEJgAM2x2bucd8g&s" />
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXLdXdD08lwjYreMEiKpPJ5MRjmJOc850ws2ir3lhMX1OHbV6jAeaLxoc&s" />
-           <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVyEndMy0x8ttUQNM6CSGbwWYwLgct_bkPMw&s"/>
-   <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRu-AuyRcKm_wlBEkb0ccyXUDCYsA58QsOA4Q&s" />
-   
+    <!-- Images Section -->
+    <div class="row photos g-3 mb-4">
+
+        <div class="col-md-6">
+            <div class="card card-custom ">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1mIWTwcjegkzg9HnL_jMeEJgAM2x2bucd8g&s">
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="card card-custom ">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXLdXdD08lwjYreMEiKpPJ5MRjmJOc850ws2ir3lhMX1OHbV6jAeaLxoc&s">
+            </div>
+        </div>
+
+        
+        <div class="col-md-6">
+            <div class="card card-custom ">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVyEndMy0x8ttUQNM6CSGbwWYwLgct_bkPMw&s">
+           
+            </div>
+        </div>
+
+        
+        <div class="col-md-6">
+            <div class="card card-custom ">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRu-AuyRcKm_wlBEkb0ccyXUDCYsA58QsOA4Q&s">
+           
+            </div>
+        </div>
+
+
     </div>
 
-    <!-- Courses -->
-    <div class="courses">
-        <h3 class="text-center mb-4">Available Courses</h3>
-        <table class="table table-bordered">
-            <tr>
-                <th>Java Fullstack</th>
-                <td>Java</td>
-                <td>Hibernate</td>
-                <td>Spring</td>
-                <td>PostgreSQL</td>
-            </tr>
-            <tr>
-                <th>Python Stack</th>
-                <td>Python</td>
-                <td>Flask</td>
-                <td>Django</td>
-                <td>PostgreSQL</td>
-            </tr>
-            <tr>
-                <th>MERN Stack</th>
-                <td>JavaScript</td>
-                <td>Node</td>
-                <td>React</td>
-                <td>MongoDB</td>
-            </tr>
-            <tr>
-                <th>.NET Stack</th>
-                <td>C#</td>
-                <td>.NET</td>
-                <td>HTML/CSS/JS</td>
-                <td>SQL Server</td>
-            </tr>
-        </table>
+    <!-- Courses Section -->
+    <div class="card card-custom p-4 mb-4">
+        <h3 class="text-center mb-3">Available Courses</h3>
+
+        <div class="table-responsive">
+            <table class="table table-bordered text-center">
+                <tr>
+                    <th>Java Fullstack</th>
+                    <td>Java</td>
+                    <td>Hibernate</td>
+                    <td>Spring</td>
+                    <td>PostgreSQL</td>
+                </tr>
+                <tr>
+                    <th>Python Stack</th>
+                    <td>Python</td>
+                    <td>Flask</td>
+                    <td>Django</td>
+                    <td>PostgreSQL</td>
+                </tr>
+                <tr>
+                    <th>MERN Stack</th>
+                    <td>JavaScript</td>
+                    <td>Node</td>
+                    <td>React</td>
+                    <td>MongoDB</td>
+                </tr>
+                <tr>
+                    <th>.NET Stack</th>
+                    <td>C#</td>
+                    <td>.NET</td>
+                    <td>HTML/CSS/JS</td>
+                    <td>SQL Server</td>
+                </tr>
+            </table>
+        </div>
     </div>
 
     <!-- Actions -->
-    <div class="actions">
+    <div class="actions mb-4">
         <h4>Admin Actions 🚀</h4>
-        <a th:href="@{/ins/add}" class="btn btn-custom">Quick Registration</a>
-        <a th:href="@{/ins/adminhomedata}" class="btn btn-custom">
-            View Students & Teachers
-        </a>
+
+        <div class="d-flex flex-wrap justify-content-center">
+            <a th:href="@{/ins/add}" class="btn btn-custom">Quick Registration</a>
+            <a th:href="@{/ins/adminhomedata}" class="btn btn-custom">
+                View Students & Teachers
+            </a>
+        </div>
     </div>
 
 </div>
