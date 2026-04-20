@@ -16,6 +16,7 @@ import emp1.demo.entity.Studentrecord;
 import emp1.demo.entity.UserRecord;
 import emp1.demo.entity.UserRecordLogin;
 import emp1.demo.service.InsService;
+import emp1.demo.service.PasEncode;
 
 @Controller
 @RequestMapping("/ins")
@@ -74,6 +75,8 @@ public class InsController {
 		return "userlogin";
 	}
 
+	PasEncode pas=new PasEncode();
+	
 	@PostMapping("userloginrecord")
 	public String denap(@ModelAttribute UserRecordLogin us) {
 		String mail = us.getEmail();
@@ -86,7 +89,8 @@ public class InsController {
 		}
 		for (int i = 0; i < ap.size(); i++) {
 			UserRecord rp = ap.get(i);
-			if (rp.getEmail().equals(mail) && rp.getPassword().equals(pass)) {
+			//System.out.println(pas.encp(pass)+"__"+rp.getPassword());
+			if (rp.getEmail().equals(mail) && pas.match(pass, rp.getPassword())) {
 				return "loginsucesshome";
 			}
 		}
