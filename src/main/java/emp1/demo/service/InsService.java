@@ -38,7 +38,7 @@ public class InsService {
 	    }
 	  // -------------------------
 	    // ----------------
-	    
+	    PasEncode ap=new PasEncode();
 	    @Autowired
 		private UserRepo  urepo;
 	    
@@ -47,7 +47,7 @@ public class InsService {
 	    	u1.setEmail(u.getEmail());
 	    	u1.setFirstname(u.getFirstname());
 	    	u1.setLastname(u.getLastname());
-	    	u1.setPassword(u.getPassword());
+	    	u1.setPassword(ap.encp(u.getPassword()));
 	    	urepo.save(u1);
 	    	
 	    	return null;
