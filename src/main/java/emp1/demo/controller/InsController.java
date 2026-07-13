@@ -33,10 +33,6 @@ public class InsController {
 		return "home"; // students.html
 	}
 
-	@GetMapping("/add")
-	public String add() {
-		return "registration";
-	}
 
 	@GetMapping
 	public String addap(Model model) {
@@ -46,28 +42,61 @@ public class InsController {
 
 		return "registeredData";
 	}
-
+	
+	//---------------------------------
+		@GetMapping("/add")
+		public String add() {
+			return "registration";
+		}
+		
+		@GetMapping("/adminadd")
+		public String adminadd() {
+			return "adminregistration";
+		}
+		@GetMapping("/useradd")
+		public String useradd() {
+			return "userregistration";
+		}
+//-----------------------------------------
+		
+		@GetMapping("/openusersignup")
+		public String usersignupadd() {
+			return "usersignup";
+		}
+		@PostMapping("/usersignupadd")
+		public String userloginsave(@ModelAttribute UserRecord s) {
+			i.usave(s);
+			return "home";
+		}
+		
+	
+//----------------------------------
+	
 	@PostMapping("/add")
 	public String save(@ModelAttribute Studentrecord s) {
 		i.save(s);
 		return "redirect:/ins/home";
 	}
+	@PostMapping("/adminadd")
+	public String adminsave(@ModelAttribute Studentrecord s) {
+		i.save(s);
+		return "adminhome";
+	}
+	@PostMapping("/useradd")
+	public String usersave(@ModelAttribute Studentrecord s) {
+		i.save(s);
+		return "loginsucesshome";
+	}
+	
+	// ---------------------------------------------
 
 	// _______________________________-
 	// ____________________________
 	// _______________________________
 
-	@PostMapping("/useradd")
-	public String usersave(@ModelAttribute UserRecord us) {
-		i.usave(us);
-		return "home";
-	}
+	
 
-	@GetMapping("/openusersignup")
-	public String editStudents(Model model) {
-
-		return "usersignup";
-	}
+	
 
 	@GetMapping("/openuserlogin")
 	public String openuserlogin() {
